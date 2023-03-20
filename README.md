@@ -1,0 +1,2 @@
+# svupa
+Supabase + Svelte Stores = ❤️

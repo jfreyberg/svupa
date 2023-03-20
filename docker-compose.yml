@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  webapp:
+    build:
+      context: .
+    container_name: svupa-webapp
+    volumes:
+      - type: bind
+        source: ./src
+        target: /app/src
+      - type: bind
+        source: ./static
+        target: /app/static
+    ports:
+      - 127.0.0.1:3000:3000
