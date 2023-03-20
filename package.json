@@ -8,14 +8,13 @@
   ],
   "scripts": {
     "build:tailwind": "npx postcss static/tail.css -o static/styles.css",
-    "dev": "npm run build:tailwind && vite dev --host",
+    "dev": "vite dev --host",
     "prod": "npm run build && ls && ls ./build && node build/index.js",
-    "build": "npm run build:tailwind && vite build",
+    "build": "vite build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview"
   },
   "dependencies": {
-    "tailwind": "^4.0.0"
   },
   "devDependencies": {
     "@supabase/supabase-js": "2.10.0",
