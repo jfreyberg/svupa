@@ -35,12 +35,12 @@
   let demoUrlOptimistic = false;
   let demoUrlPesimisitic = false;
   onMount(async () => {
-    const sv = svupa(supabase, "demo", keys);
+    const svupa_client= svupa(supabase, "demo", keys);
     let int = 1;
     let text = "one";
     let bool = false;
     row_id = uuidv4();
-    await sv.insert(
+    await svupa_client.insert(
       {
         id: row_id,
         number: int,
@@ -96,7 +96,7 @@ Settings."
   <Title id="project">
     <img src="/icon.png" class="h-32 p-4" />
     <span class="text-[#F19A3E]">Sv</span><span class="text-[#00A063]">upa</span
-    ></Title
+    >.js</Title
   >
   <Subtitle>
     A <a href="https://svelte.dev/" class="text-[#F19A3E]">Svelte</a>
@@ -107,14 +107,14 @@ Settings."
   </Subtitle>
 
   <div
-    class="relative md:w-[800px] w-full border-4 border-gray-200 dark:border-[rgba(255,255,255,0.1)] rounded-md shadow-md hover:shadow-lg transition-all duration-300 my-8"
+    class="relative md:w-[800px] w-full border-2 outline outline-0 hover:outline-2 outline-gray-200 border-gray-200 dark:border-[rgba(255,255,255,0.1)] rounded-md shadow-md hover:shadow-lg transition-all duration-300 my-8"
   >
     <img
       src="/arrow.png"
-      class="w-32 h-32 dark:brightness-0 dark:invert absolute -right-24 -bottom-24 z-30 rotate-180"
+      class="w-32 h-32 dark:brightness-0 dark:invert absolute -right-24 -bottom-24 z-30 rotate-180 xl:flex hidden"
     />
     <div
-      class="w-48 h-32 absolute -right-48 text-2xl -bottom-32 z-30 flex items-end"
+      class="w-48 h-32 absolute -right-48 text-2xl -bottom-32 z-30 items-end xl:flex hidden"
       style="font-family:Indie Flower;"
     >
       This is what it does. Cool, huh?
@@ -205,10 +205,10 @@ Settings."
   <div class="relative max-w-full">
     <img
       src="/arrow2.png"
-      class="w-32 h-32 dark:brightness-0 dark:invert absolute -right-28 -top-20 z-10"
+      class="w-32 h-32 dark:brightness-0 dark:invert absolute -right-28 -top-20 z-10 xl:flex hidden"
     />
     <div
-      class="w-48 h-32 absolute -right-48 text-2xl -top-32 z-30 flex items-start"
+      class="w-48 h-32 absolute -right-48 text-2xl -top-32 z-30 flex items-start xl:flex hidden"
       style="font-family:Indie Flower;"
     >
       Click here to copy this code.
@@ -358,28 +358,4 @@ Settings."
     </div>
   </div>
 -->
-</div>
-
-<div
-  class="w-full text-gray-400 flex flex-row items-center justify-center py-8 gap-x-8"
->
-  <a class="hover:text-gray-600 transition-all duration-300" href="/#project"
-    >project</a
-  >
-  <a class="hover:text-gray-600 transition-all duration-300" href="/#features"
-    >features</a
-  >
-  <a class="hover:text-gray-600 transition-all duration-300" href="/#demo"
-    >demo</a
-  >
-  <a
-    class="hover:text-gray-600 transition-all duration-300"
-    href="https://github.com/jfreyberg/Svupa">github</a
-  >
-  <a class="hover:text-gray-600 transition-all duration-300" href="/contact"
-    >contact</a
-  >
-  <a class="hover:text-gray-600 transition-all duration-300" href="/legal"
-    >legal</a
-  >
 </div>

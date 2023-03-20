@@ -1,5 +1,5 @@
 {
-    "usage": "<script>\nimport svupa from 'svupa';\nconst sv = svupa(supabase_client, 'table_name', 'primary_key');\nlet { store: rows } = sv.request({'type': 'eq' ,'column': 'my_column', 'value': 'my_value'});\n</script>\n\n{#each $rows as row (row.key)}\n    <RowComponent {row} on:click={() => {sv.delete(row)}}>\n{/each}",
+    "usage": "<script>\nimport svupa from 'svupa';\nconst svupa_client= svupa(supabase_client, 'table_name', 'primary_key');\nlet { store: rows } = svupa_client.request({'type': 'eq' ,'column': 'my_column', 'value': 'my_value'});\n</script>\n\n{#each $rows as row (row.key)}\n    <RowComponent {row} on:click={() => {svupa_client.delete(row)}}>\n{/each}",
     "sql": "INSERT INTO table_name (primary_key, my_column, another_column) VALUES ('key-123', my_value, 'new data');",
     "installNpm": "npm install svupa --save",
     "installYarn": "yarn install svupa ?"

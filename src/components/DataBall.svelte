@@ -77,7 +77,7 @@
       style={"border-width:" + ($element.number + 3) * 2 + "px !important;"}
       class="scale-{scale} {$element.is_even
         ? 'border-[#F19A3E] text-[#F19A3E]'
-        : 'border-[#D81E5B] text-[#D81E5B]'} select-none rounded-full w-48 h-48 transition-all duration-200 cursor-pointer flex items-center justify-center text-6xl font-extrabold"
+        : 'border-[#D81E5B] text-[#D81E5B]'} select-none rounded-full w-24 h-24 lg:w-48 lg:h-48 transition-all duration-200 cursor-pointer flex items-center justify-center text-4xl lg:text-6xl font-extrabold"
       on:click={async () => {
         scale = 90;
         await upsertRow();
