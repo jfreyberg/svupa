@@ -7,9 +7,12 @@
     "dist"
   ],
   "scripts": {
-    "build:tailwind": "npx tailwindcss -i static/tail.css -o static/styles.css",
-    "dev": "vite dev --host",
-    "build": "npm run build:tailwind && npm run dev"
+    "build:tailwind": "npx postcss static/tail.css -o static/styles.css",
+    "dev": "npm run build:tailwind && vite dev --host",
+    "prod": "npm run build && ls && ls ./build && node build/index.js",
+    "build": "npm run build:tailwind && vite build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview"
   },
   "dependencies": {
     "tailwind": "^4.0.0"
