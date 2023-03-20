@@ -13,7 +13,7 @@
     class="w-32 h-32 dark:brightness-0 dark:invert absolute -left-24 -top-24 z-30 hidden 2xl:flex"
   />
   <div
-    class="w-60 h-32 absolute -left-60 text-2xl -top-32 z-30 hidden 2xl:flex" 
+    class="w-60 h-32 absolute -left-60 text-2xl -top-32 z-30 hidden 2xl:flex"
     style="font-family:Indie Flower;"
   >
     By the way, <br />these are iframes*.
@@ -46,7 +46,7 @@
     <h3 class="text-xl font-semibold my-4 text-center">
       The state of the database.
     </h3>
-    <p class="my-2 text-justify">
+    <p class="my-2 text-justify hidden lg:flex">
       The state of the database is the ground truth. The left iframe uses
       pessimistic updates, i.e. every click invokes a request to the server,
       which then updates the database. As the state of both instances is synced
@@ -59,7 +59,7 @@
     <h3 class="text-xl font-semibold my-4 text-center">
       The same thing but with optimistic updates.
     </h3>
-    <p class="my-2 text-justify">
+    <p class="my-2 text-justify hidden lg:flex">
       With optimistic updates, the client that invokes a change of the data will
       see their state update <span class="italic">instantly</span>. If the
       change is rejected by the server, the client state will be reverted to the
