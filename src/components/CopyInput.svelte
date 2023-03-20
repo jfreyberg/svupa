@@ -12,7 +12,7 @@
   }
 </script>
 
-<div class="relative group/InputField my-4 w-96 lg:w-auto">
+<div class="relative group/InputField my-4 w-80 lg:w-auto">
   <div
     class="truncate bg-white group-hover/InputField:shadow-md w-full group-hover/InputField:border-gray-300 p-2 outline-none text-sm shadow-sm hover:shadow-md text-gray-700 rounded-md border-2 border-gray-200 dark:border-[rgba(255,255,255,0.1)] flex transition duration-300 ease-in-out hover:border-gray-300 focus:border-gray-300"
   >
