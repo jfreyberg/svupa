@@ -4,6 +4,7 @@
   import Title from "/src/components/Title.svelte";
   import Markup from "/src/components/Markup.svelte";
   import Subtitle from "/src/components/Subtitle.svelte";
+  import ShowOff from "/src/components/ShowOff.svelte";
   import Button from "/src/components/Button.svelte";
   import CodeSnippet from "/src/components/CodeSnippet.svelte";
   import DemoBox from "/src/components/DemoBox.svelte";
@@ -28,14 +29,14 @@
       return data;
     });
   }
-
   let table = "demo";
   let row_id = false;
   let demoUrl = false;
   let demoUrlOptimistic = false;
   let demoUrlPesimisitic = false;
+  let svupa_client = false;
   onMount(async () => {
-    const svupa_client= svupa(supabase, "demo", keys);
+    svupa_client = svupa(supabase, "demo", keys);
     let int = 1;
     let text = "one";
     let bool = false;
@@ -138,26 +139,31 @@ Settings."
       >.
     </FeatureCard>
     <FeatureCard title={"Optional Optimistic Updates"}>
-      For some applications, optimistic updates are a must have. Others require
-      a consistent state. Svupa allows you to choose.
+      For some applications, <a
+        href="https://en.wikipedia.org/wiki/Optimistic_replication"
+        class="underline">optimistic updates</a
+      > are a must have. Others require a consistent state. Svupa allows you to choose.
     </FeatureCard>
     <FeatureCard title={"Application-wide Data-Caching"}>
-      Svupa caches requested data on the client side and only fetches new data
-      when there is. This reduces the load on the database and allows for a
-      faster user experience.
+      Need the same data in multiple components? Svupa caches requested data. No
+      need to fetch the same data multiple times.
     </FeatureCard>
     <FeatureCard title={"No Polling"}>
       Supabase Realtime uses websockets and server side notifications to push
       changes. No changes on your data, no traffic between client and server.
     </FeatureCard>
     <FeatureCard title={"Conflic Resolution"}>
-      Svupa uses a variation of Operation-based Conflict Resolution to keep the
-      data consistent across clients.
+      Svupa uses a variation of <a
+        href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type"
+        class="underline">Operation-based Conflict Resolution</a
+      > to keep the data consistent across clients.
     </FeatureCard>
     <FeatureCard title={"Simple Usage"}>
       Svupa can be integrated into existing projects with minimal friction. If
-      your stack is Svelte + Supabase already, Svupa can be integrated in three
-      LOC.
+      your stack is Svelte + Supabase already, Svupa can be integrated <a
+        href="#usage"
+        class="underline">in three LOC</a
+      >.
     </FeatureCard>
     <FeatureCard title={"As scalable as Supabase"}>
       Svelte runs on the client side, hence it is not a bottleneck. Supabase
@@ -184,22 +190,20 @@ Settings."
 
   <CopyInput text={demoUrl} />
 
-  <p class="my-2">
-    You can open this link in a new tab, another browser, or send it to your
-    friend on another continent.
-  </p>
-  <p class="my-2">
-    They will see the same data as you do, and they will see it update in
-    realtime.
+  <p class="my-2 w-2/3 text-justify">
+    You can open this link in a new tab, another browser, your phone or send it
+    to your friend on another continent. They will see the same data as you do,
+    and they will see it update in realtime when you click - and you will see
+    their changes in realtime too.
   </p>
 
   <Title id="usage">Usage</Title>
 
   <Subtitle>As convenient as it gets.</Subtitle>
 
-  <p class="my-2">
+  <p class="my-2 w-2/3 text-justify">
     Using the Supabase API is low effort already. Svupa takes it to the next
-    level.
+    level. You can integrate it into your existing Svelte project in three LOC.
   </p>
 
   <div class="relative max-w-full">
@@ -214,44 +218,52 @@ Settings."
       Click here to copy this code.
     </div>
     <div class="relative z-20">
-      <CodeSnippet code={code.usage} />
+      <CodeSnippet code={code.usage} filename={"Component.svelte"} />
     </div>
   </div>
 
-  <p class="my-2">
+  <p class="my-2 w-2/3 text-justify">
     That's it. Your application is now subscribed to the state of
-    <Markup>my_table</Markup> where <Markup>my_column = my_value</Markup>.
+    <Markup>my_table</Markup> where <Markup>my_column = my_value</Markup>. As
+    the data is directly streamed to a Svelte store, you can use it exactly as
+    you would with any other store. And since this is working on top of
+    Supabase, authentication and RLS are respected without any additional
+    effort.
   </p>
 
-  <p class="my-2">
-    As this is working on top of Supabase, authentication, RLS and all other
-    features of Supabase are integrated without any additional effort.
+  <Subtitle>Change it, tweak it, that's it.</Subtitle>
+  <p class="my-2 w-2/3 text-justify">
+    Svupa has some built in metadata stores like <Markup>size</Markup> and <Markup>header</Markup> but you can also define your own <a
+      href="https://svelte.dev/docs#run-time-svelte-store-derived"
+      class="underline">derived stores</a
+    >. For example, we can extend the above example to also show the sum of some value.
   </p>
 
-  <p class="my-2">
-    As the data is directly streamed to a Svelte store, you can use it exactly
-    as you would with any other store.
+  <div class="relative z-20">
+    <CodeSnippet code={code.derived} filename={"AnotherComponent.svelte"} />
+  </div>
+
+  <p class="my-2 w-2/3 text-justify">
+    And - you probably already guessed it - this store and the dependent UI components are updated with any update to the underlying data.
+    No matter if it's an optimistic update or an update in the database, your UI will always be up to date and consistent.
   </p>
+
 
   <Subtitle>Change the state from everywhere.</Subtitle>
 
-  <p class="my-2">
+  <p class="my-2 w-2/3 text-justify">
     Updates of relevant rows will trigger a render of the component on all
-    subscribed clients, no matter where they come from.
+    subscribed clients, no matter where they come from. Any microservice or
+    cronjob can update the data and all clients will immediately see the change.
   </p>
   <div class="relative z-20 max-w-full">
-    <CodeSnippet code={code.sql} />
+    <CodeSnippet code={code.sql} filename={"request.sql"} />
   </div>
-
-  <p class="my-2">
-    Any microservice or cronjob can update the data and all clients will
-    immediately see the change.
-  </p>
 
   <!--
   <Subtitle>Are you ready to try it?</Subtitle>
 
-  <p class="my-2">Easily install using the package manager of your choice.</p>
+  <p class="my-2 w-2/3 text-justify">Easily install using the package manager of your choice.</p>
   <div class="w-2/3 grid grid-cols-2">
     <CodeSnippet code={code.installNpm} />
     <CodeSnippet code={code.installYarn} />
@@ -260,15 +272,14 @@ Settings."
 
   <Title id="alternatives">Alternatives</Title>
 
-  <p class="my-2">
+  <p class="my-2 w-2/3 text-justify">
     There are other great, much more sophisticated and established frameworks
-    that deal with client synchronization.
+    that deal with client synchronization. Before you consider using Svupa,
+    check out these frameworks to see if they better fit your usecase.
   </p>
-  <p class="my-2">
-    Before you consider using Svupa, check out these frameworks to see if they
-    better fit your usecase.
-  </p>
-  <div class="text-lg grid-cols-1 md:grid-cols-2 grid lg:grid-cols-3 w-full gap-16 my-8">
+  <div
+    class="text-lg grid-cols-1 md:grid-cols-2 grid lg:grid-cols-3 w-full gap-16 my-8"
+  >
     <a href="https://github.com/yjs/yjs">
       <FeatureCard title={"Yjs"} type="link">
         Due to its fast peer-to-peer nature Yjs is ideal for usecases that need
@@ -281,6 +292,14 @@ Settings."
         example, Replicache has offline support.
       </FeatureCard>
     </a>
+    <a href="https://sveltequery.vercel.app/">
+      <FeatureCard title={"Svelte Query"} type="link">
+        Backend agnostic, performant and powerful data synchronization for
+        Svelte. Not using Supabase? You should check out Svelte Query instead of
+        Svupa.
+      </FeatureCard>
+    </a>
+
     <a href="/contact">
       <FeatureCard title={"What else?"} type="plus">
         If you know of any other frameworks that are worth mentioning, please
@@ -292,12 +311,22 @@ Settings."
   <Title id="status">Status</Title>
 
   <Subtitle>Svupa is in open alpha.</Subtitle>
-  <p class="my-2">
-    This project is far from finished. It is currently in open alpha, and I am
-    very happy about feedback and contributions of any kind.
+  <p class="my-2 w-2/3 text-justify">
+    Currently, Svupa is in a proof of concept state and I am very happy about
+    feedback. The framework is in open alpha (i.e. it works and is openly
+    available on GitHub), but there is no npm release yet. While the majority of
+    features seem to be running stable, it is strongly advised against using
+    Svupa for anything other than playing around. If you have questions, ideas
+    or feedback, please get in touch.
   </p>
-  <p class="my-2">
-    If you have questions, ideas or feedback, please get in touch.
+
+  <p class="my-2 w-2/3 text-justify">
+    This project is submitted to
+    <a href="https://hack.sveltesociety.dev/" class="underline">SvelteHack</a> -
+    a Hackaton organized by
+    <a href="https://sveltesociety.dev/" class="underline">Svelte Society</a>.
+    Therefore, contributions of any kind will only be possible after the
+    Hackaton is over.
   </p>
 
   <Subtitle>
@@ -311,7 +340,6 @@ Settings."
       >
     </span>
   </Subtitle>
-
   <!--
   <div class="w-1/2 mx-auto flex flex-row">
     <Button on:click={() => {

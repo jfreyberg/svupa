@@ -3,7 +3,6 @@ import type { Writable, Readable } from "svelte/store";
 
 import { mapStore } from "./mapStore";
 import type { MapStore } from "./mapStore";
-import { c } from "svelte-highlight/languages";
 
 type Subscription = {
   conditions: Conditions;
@@ -106,8 +105,8 @@ class svupaStore {
   // data stores
   _internalStore: MapStore<Object>;
   _externalStore: Readable<Array<Object>>;
-  _sizeStore: Readable<Number | false>;
-  _headerStore: Writable<Array<String> | false>;
+  size: Readable<Number | false>;
+  header: Writable<Array<String> | false>;
   _subscriptionsStore: MapStore<Subscription>;
 
   db: DB;
@@ -133,13 +132,13 @@ class svupaStore {
     }
     this.db = new DB(supabase, schema, table, primaryKeys);
 
-    this._headerStore = writable(false);
+    this.header = writable(false);
     this._internalStore = mapStore();
     this._externalStore = derived(this._internalStore, ($internalStore) => {
       //console.log("updating external store!");
       return [...$internalStore.values()];
     });
-    this._sizeStore = derived(
+    this.size = derived(
       this._internalStore,
       ($internalStore, set) => {
         set($internalStore.size);
@@ -357,9 +356,9 @@ class svupaStore {
       row = await this.row_callback(row);
     }
 
-    if (get(this._headerStore) === false) {
+    if (get(this.header) === false) {
       // first row ever? set header
-      this._headerStore.set(Object.keys(row));
+      this.header.set(Object.keys(row));
     }
 
     if (timestamp) {

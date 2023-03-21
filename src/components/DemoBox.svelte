@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="group/demoBox mt-4 w-full h-96 relative bg-gradient-to-br from-[#F19A3E] to-[#D81E5B] p-1 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+  class="group/demoBox mt-4 w-2/3 lg:w-full h-96 relative bg-gradient-to-br from-[#F19A3E] to-[#D81E5B] p-1 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
 >
   <img
     alt="arrow"
@@ -33,20 +33,20 @@
   -->
   <div class="flex absolute top-0 left-0 h-96 p-1 w-full z-20 mx-auto">
     <div
-      class="w-full h-full flex flex-row  overflow-hidden rounded-md gap-x-1"
+      class="w-full h-full flex flex-col lg:flex-row overflow-hidden rounded-md gap-1"
     >
       <Frame url={demoUrlPesimisitic} />
       <Frame url={demoUrlOptimistic} />
     </div>
   </div>
 </div>
-<div class="w-full flex flex-row my-4">
+<div class="w-full hidden lg:flex flex-row my-4">
   <div class="w-1/2 px-8">
     <p class="my-4" />
     <h3 class="text-xl font-semibold my-4 text-center">
       The state of the database.
     </h3>
-    <p class="my-2 text-justify hidden lg:flex">
+    <p class="my-2 text-justify w-full">
       The state of the database is the ground truth. The left iframe uses
       pessimistic updates, i.e. every click invokes a request to the server,
       which then updates the database. As the state of both instances is synced
@@ -59,7 +59,7 @@
     <h3 class="text-xl font-semibold my-4 text-center">
       The same thing but with optimistic updates.
     </h3>
-    <p class="my-2 text-justify hidden lg:flex">
+    <p class="my-2 text-justify">
       With optimistic updates, the client that invokes a change of the data will
       see their state update <span class="italic">instantly</span>. If the
       change is rejected by the server, the client state will be reverted to the
@@ -67,4 +67,9 @@
       clients is <span class="italic">asynchronous</span>.
     </p>
   </div>
+</div>
+<div class="flex lg:hidden w-2/3 mt-8 text-justify">
+  Above you see two iframes connecting to the same data source using Svupa.
+  The first one uses pessimistic updates, the right one uses optimistic updates.
+  Try clicking on them!
 </div>

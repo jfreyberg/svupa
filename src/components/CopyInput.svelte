@@ -1,4 +1,6 @@
 <script>
+  import QRCode from "/src/components/QRCode.svelte";
+
   export let text;
   export let newWindow = false;
   let copied = false;
@@ -21,6 +23,18 @@
   <div
     class="absolute -right-3 -top-3 flex flex-row gap-x-2 text-xs font-semibold text-gray-500"
   >
+    <div
+      class="relative group/qr group-hover/InputField:shadow-md group-hover/InputField:border-gray-300 p-1 border-2 cursor-pointer shadow-sm hover:shadow-md border-gray-200 dark:border-[rgba(255,255,255,0.1)] bg-white rounded-md items-center hover:bg-gray-100 transition-all duration-200"
+    >
+      <img src="/qr.png" class="w-5 h-5 cursor-pointer" />
+      {#if text && text.length > 0}
+        <div
+          class="p-2 border-gray-200 border-2 rounded-md absolute bottom-2 right-2 bg-white z-50 h-48 w-48 group-hover/qr:flex hidden"
+        >
+          <QRCode value={text} size="400" />
+        </div>
+      {/if}
+    </div>
     <div
       on:keydown={() => {}}
       on:click={() => {

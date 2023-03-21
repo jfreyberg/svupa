@@ -8,5 +8,5 @@
 >
   <img src="/{type}.png" class="w-8 h-8 dark:brightness-0 dark:invert" />
   <div class="text-lg">{title}</div>
-  <p class="text-sm"><slot /></p>
+  <p class="text-sm text-justify"><slot /></p>
 </div>

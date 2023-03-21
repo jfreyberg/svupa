@@ -3,7 +3,7 @@
   export let url;
 </script>
 
-<div class="w-1/2 h-full relative bg-white group/iframe">
+<div class="lg:w-1/2 w-full h-full relative bg-white group/iframe">
   {#if url}
     <div
       class="absolute top-0 left-0 w-full h-8 bg-gray-100 px-2 gap-x-2 flex items-center"
