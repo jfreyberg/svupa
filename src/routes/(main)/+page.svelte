@@ -4,7 +4,6 @@
   import Title from "/src/components/Title.svelte";
   import Markup from "/src/components/Markup.svelte";
   import Subtitle from "/src/components/Subtitle.svelte";
-  import ShowOff from "/src/components/ShowOff.svelte";
   import Button from "/src/components/Button.svelte";
   import CodeSnippet from "/src/components/CodeSnippet.svelte";
   import DemoBox from "/src/components/DemoBox.svelte";
@@ -135,7 +134,7 @@ Settings."
       Svupa considers Supabase's Postgres database as a
       <a
         href="https://en.wikipedia.org/wiki/Single_source_of_truth"
-        class="underline">Single Source of Truth (SSOT)</a
+        class="underline">Single Source of Truth</a
       >.
     </FeatureCard>
     <FeatureCard title={"Optional Optimistic Updates"}>
