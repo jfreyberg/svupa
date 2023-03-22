@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="group/demoBox mt-4 w-2/3 lg:w-full h-96 relative bg-gradient-to-br from-[#F19A3E] to-[#D81E5B] p-1 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+  class="group/demoBox mt-4 mx-4 lg:mx-0 lg:w-full h-96 relative bg-gradient-to-br from-[#F19A3E] to-[#D81E5B] p-1 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
 >
   <img
     alt="arrow"

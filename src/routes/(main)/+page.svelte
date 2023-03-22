@@ -124,7 +124,7 @@ Settings."
 
   <Title id="features">Features</Title>
   <Subtitle>
-    All the features you need to build realtime apps with Supabase and Svelte.
+    All the features you need to build realtime apps.
   </Subtitle>
 
   <div

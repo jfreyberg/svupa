@@ -4,7 +4,7 @@
 </script>
 
 <div class="flex items-center justify-center h-full">
-  <div class="w-full md:w-2/3">
+  <div class="w-full lg:w-2/3">
     <DemoBox
     demoUrlPesimisitic={data.row_id + "/pessimistic"}
     demoUrlOptimistic={data.row_id + "/optimistic"}
