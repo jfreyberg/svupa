@@ -31,7 +31,7 @@
         <div
           class="p-2 border-gray-200 border-2 rounded-md absolute bottom-2 right-2 bg-white z-50 h-48 w-48 group-hover/qr:flex hidden"
         >
-          <QRCode value={text} size="400" />
+          <QRCode value={text} size="192" />
         </div>
       {/if}
     </div>

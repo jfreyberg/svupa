@@ -70,6 +70,5 @@
 </div>
 <div class="flex lg:hidden w-2/3 mt-8 text-justify">
   Above you see two iframes connecting to the same data source using Svupa.
-  The first one uses pessimistic updates, the right one uses optimistic updates.
-  Try clicking on them!
+  The first one uses pessimistic updates, the second one uses optimistic updates.
 </div>

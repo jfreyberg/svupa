@@ -189,7 +189,7 @@ Settings."
 
   <CopyInput text={demoUrl} />
 
-  <p class="my-2 w-2/3 text-justify">
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     You can open this link in a new tab, another browser, your phone or send it
     to your friend on another continent. They will see the same data as you do,
     and they will see it update in realtime when you click - and you will see
@@ -200,9 +200,10 @@ Settings."
 
   <Subtitle>As convenient as it gets.</Subtitle>
 
-  <p class="my-2 w-2/3 text-justify">
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     Using the Supabase API is low effort already. Svupa takes it to the next
-    level. You can integrate it into your existing Svelte project in three LOC.
+    level. You can integrate it into your existing Svelte project with just a
+    few LOC.
   </p>
 
   <div class="relative max-w-full">
@@ -221,7 +222,7 @@ Settings."
     </div>
   </div>
 
-  <p class="my-2 w-2/3 text-justify">
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     That's it. Your application is now subscribed to the state of
     <Markup>my_table</Markup> where <Markup>my_column = my_value</Markup>. As
     the data is directly streamed to a Svelte store, you can use it exactly as
@@ -231,26 +232,31 @@ Settings."
   </p>
 
   <Subtitle>Change it, tweak it, that's it.</Subtitle>
-  <p class="my-2 w-2/3 text-justify">
-    Svupa has some built in metadata stores like <Markup>size</Markup> and <Markup>header</Markup> but you can also define your own <a
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
+    Svupa has some built in metadata stores like <Markup>size</Markup> and <Markup
+      >header</Markup
+    > but you can also define your own
+    <a
       href="https://svelte.dev/docs#run-time-svelte-store-derived"
       class="underline">derived stores</a
-    >. For example, we can extend the above example to also show the sum of some value.
+    >. For example, we can extend the above example to also show the sum of some
+    value.
   </p>
 
-  <div class="relative z-20">
+  <div class="relative z-20 max-w-full">
     <CodeSnippet code={code.derived} filename={"AnotherComponent.svelte"} />
   </div>
 
-  <p class="my-2 w-2/3 text-justify">
-    And - you probably already guessed it - this store and the dependent UI components are updated with any update to the underlying data.
-    No matter if it's an optimistic update or an update in the database, your UI will always be up to date and consistent.
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
+    And - you probably already guessed it - this store and the dependent UI
+    components are updated with any update to the underlying data. No matter if
+    it's an optimistic update or an update in the database, your UI will always
+    be up to date and consistent.
   </p>
-
 
   <Subtitle>Change the state from everywhere.</Subtitle>
 
-  <p class="my-2 w-2/3 text-justify">
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     Updates of relevant rows will trigger a render of the component on all
     subscribed clients, no matter where they come from. Any microservice or
     cronjob can update the data and all clients will immediately see the change.
@@ -262,7 +268,7 @@ Settings."
   <!--
   <Subtitle>Are you ready to try it?</Subtitle>
 
-  <p class="my-2 w-2/3 text-justify">Easily install using the package manager of your choice.</p>
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">Easily install using the package manager of your choice.</p>
   <div class="w-2/3 grid grid-cols-2">
     <CodeSnippet code={code.installNpm} />
     <CodeSnippet code={code.installYarn} />
@@ -271,7 +277,7 @@ Settings."
 
   <Title id="alternatives">Alternatives</Title>
 
-  <p class="my-2 w-2/3 text-justify">
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     There are other great, much more sophisticated and established frameworks
     that deal with client synchronization. Before you consider using Svupa,
     check out these frameworks to see if they better fit your usecase.
@@ -310,22 +316,23 @@ Settings."
   <Title id="status">Status</Title>
 
   <Subtitle>Svupa is in open alpha.</Subtitle>
-  <p class="my-2 w-2/3 text-justify">
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     Currently, Svupa is in a proof of concept state and I am very happy about
     feedback. The framework is in open alpha (i.e. it works and is openly
     available on GitHub), but there is no npm release yet. While the majority of
     features seem to be running stable, it is strongly advised against using
-    Svupa for anything other than playing around. If you have questions, ideas
-    or feedback, please get in touch.
+    Svupa for anything other than playing around as of now. If you have
+    questions, ideas or feedback, please get in touch.
   </p>
 
-  <p class="my-2 w-2/3 text-justify">
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     This project is submitted to
     <a href="https://hack.sveltesociety.dev/" class="underline">SvelteHack</a> -
     a Hackaton organized by
     <a href="https://sveltesociety.dev/" class="underline">Svelte Society</a>.
+    <!--
     Therefore, contributions of any kind will only be possible after the
-    Hackaton is over.
+    Hackaton is over.-->
   </p>
 
   <Subtitle>
