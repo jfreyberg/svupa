@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="group/demoBox mt-4 mx-4 lg:mx-0 lg:w-full h-96 relative bg-gradient-to-br from-[#F19A3E] to-[#D81E5B] p-1 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+  class="group/demoBox mt-4 mx-4 lg:mx-0 w-full h-96 relative bg-gradient-to-br from-[#F19A3E] to-[#D81E5B] p-1 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
 >
   <img
     alt="arrow"
@@ -68,7 +68,7 @@
     </p>
   </div>
 </div>
-<div class="flex lg:hidden w-2/3 mt-8 text-justify">
+<div class="flex lg:hidden w-full px-4 mt-8 text-justify">
   Above you see two iframes connecting to the same data source using Svupa.
   The first one uses pessimistic updates, the second one uses optimistic updates.
 </div>
