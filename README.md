@@ -6,9 +6,9 @@
 
 Svupa is a [Svelte](https://svelte.dev/) + [Supabase](https://supabase.com/) framework to create realtime apps with a single source of truth and optimistic updates.
 
-Using Supastore, Supabase can serve as a Single Source of Truth for your data.
+Using Svupa, Supabase can serve as a Single Source of Truth for your data.
 Every event (insert, update or delete) is directly streamed to the client, where a Svelte store is updated accordingly and the User Interface relfects the changes.
-Additionally, Supastore offers an optimistic update mode, making your user interface more responsive.
+Additionally, Svupa offers an optimistic update mode, making your user interface more responsive.
 
 Features
 - [x] Realtime UI updates across all affected clients
