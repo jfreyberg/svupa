@@ -22,4 +22,4 @@ Features
 - [x] Minimal Footprint
 - [x] Open-Source
 
-Read much more about it on the project webiste: https://svupa.vercel.app/
+You can read much more about it and try out the demo on the [project webiste](https://svupa.vercel.app/).
