@@ -29,7 +29,7 @@
       <img src="/qr.png" class="w-5 h-5 cursor-pointer" />
       {#if text && text.length > 0}
         <div
-          class="p-2 border-gray-200 border-2 rounded-md absolute bottom-2 right-2 bg-white z-50 h-48 w-48 group-hover/qr:flex hidden"
+          class="p-2 border-gray-200 border-2 rounded-md absolute bottom-2 right-2 bg-white z-50 h-48 w-48 group-hover/qr:flex hidden outline outline-[9999px] outline-[rgba(255,255,255,0.5)] dark:outline-[rgba(0,0,0,0.3)]"
         >
           <QRCode value={text} size="172" />
         </div>

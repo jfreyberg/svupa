@@ -3,10 +3,29 @@
   import FeatureItem from "/src/components/FeatureItem.svelte";
   import Title from "/src/components/Title.svelte";
   import Subtitle from "/src/components/Subtitle.svelte";
+  import Markup from "/src/components/Markup.svelte";
 </script>
 
 <div class="flex flex-col items-center justify-center">
-  <Title id="concept">Concept</Title>
+  <Title id="idea">Idea</Title>
+  <Subtitle>I built it, cause' I needed it.</Subtitle>
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
+    I built Svupa to use it at my startup <a
+      href="https://kmapp.io/"
+      class="underline">kmapp.io</a
+    >. We are building a modern, document-centric knowledge management platform.
+    Building a multi-user web app is not easy, there are a lot of things to
+    consider during development. One of the most important things is the state
+    of the application. The state of the application is what the user sees, and
+    ideally, it should be consistent for all users that are currently viewing
+    the same content. If user A adds a comment, user B should see this comment
+    in realtime. It is absolutely possible to achieve this with Supabase and
+    Svelte, but doing it for many different parts of the application (comments,
+    tags, etc.) requires a lot of boilerplate code. Abstraction is the key to
+    success here, and that is when I came up with the idea for Svupa - an
+    abstraction layer, that makes it easy to build realtime web apps.
+  </p>
+  <!--
   <Subtitle>The Status Quo.</Subtitle>
   <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     Almost any modern webapp consists of frontend and backend componets. While
@@ -34,34 +53,42 @@
     would be much better if just the changes were sent, right? Well, that is
     what Supabase Realtime does.
   </p>
-  <Subtitle>Why do we need something else?</Subtitle>
+  <Subtitle>Why do we need something else on top?</Subtitle>
   <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
-    Okay, so using Supabase Realtime we are able to pull the initial data and
-    then get updates on the data if it changes. But we still need to make our UI
-    respond to these changes (i.e. are updated accordingly). It is not trivial
-    to reflect these changes. Or is it? Reactivity has shaped most of the major
+    Using Supabase Realtime we are able to pull the initial data and then get
+    updates on the data if it changes. But we still need to make our UI respond
+    to these changes (i.e. are updated accordingly). It is not trivial to
+    reflect these changes. Or is it? Reactivity has shaped most of the major
     Javascript frameworks, but, to cite the
     <a
       href="https://vercel.com/docs/beginner-sveltekit/reactivity"
       class="underline">Vercel Tutorial</a
-    >, "Svelte almost feels like magic here". The changes received from the
-    backend can be directly streamed into a Svelte store. Now Svelte can do its
-    thing: Update data that depends on the update (derived stores) and show the
-    results on the UI - at astonishing speed.
+    >, "Svelte almost feels like magic here". Changes received from the backend
+    can be directly "streamed" into a Svelte store. Now Svelte can do its thing:
+    Update data that depends on the update (derived stores) and show the results
+    on the UI - at astonishing speed.
   </p>
+-->
+  <Title id="concept">Concept</Title>
+  <Subtitle>What does it look like?</Subtitle>
   <img src="concept.png" class="max-w-[600px] m-8" />
 
   <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
-    As a developer, one just just needs to define... <br />
-    what data is needed request()<br />
-
-    If (and how) it needs to be transformed derived()<br />
-    and how the data should be displayed<br />
-    Everything else,
+    As a developer, one just just needs to define what data is needed, if (and
+    how) it needs to be transformed and how the data should be displayed to the
+    user and mutated by the user. Everything else is handled by Svupa. The data
+    changes, the UI updates.
   </p>
 
   <Title id="dependencies">Dependencies</Title>
 
+  <Subtitle>A very opinionated framework.</Subtitle>
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
+    Svupa is built on top of Svelte and Supabase, which in turn is built on top
+    of Postgres. This makes Svupa a heavily opinionated framework. Below you
+    will see why I chose these dependencies, as well as explanations of how to
+    understand Svupa if you are not familiar with Svelte or Supabase.
+  </p>
   <Subtitle>Svelte Stores, but for the server.</Subtitle>
   <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     If you are familiar with Svelte (especially stores and reactivity) you can
@@ -81,7 +108,7 @@
       <FeatureItem
         text="Svelte's reactivity makes it an ideal fit for realtime apps."
       />
-      <FeatureItem text="Svelte makes developing so much more fun." />
+      <!--<FeatureItem text="Svelte makes developing so much more fun." />-->
     </div>
   </div>
 
@@ -105,7 +132,7 @@
       <FeatureItem
         text="The Realtime API is exactly what's needed for a framework like Svupa."
       />
-      <FeatureItem text="Supabase makes developing so much more fun." />
+      <!--<FeatureItem text="Supabase makes developing so much more fun." />-->
     </div>
   </div>
 
@@ -113,8 +140,8 @@
 
   <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     There are other great, much more sophisticated and established frameworks
-    that deal with client synchronization. Before you consider using Svupa,
-    check out these frameworks to see if they better fit your usecase.
+    that deal with client synchronization. If you like Svupa, check out these
+    frameworks to see if they fit your usecase.
   </p>
   <div
     class="text-lg grid-cols-1 md:grid-cols-2 grid lg:grid-cols-3 w-full gap-16 my-8"

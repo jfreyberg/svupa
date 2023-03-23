@@ -28,14 +28,12 @@
       return data;
     });
   }
-  let table = "demo";
   let row_id = false;
   let demoUrl = false;
   let demoUrlOptimistic = false;
   let demoUrlPesimisitic = false;
-  let svupa_client = false;
   onMount(async () => {
-    svupa_client = svupa(supabase, "demo", keys);
+    let svupa_client = svupa(supabase, "demo", keys);
     let int = 1;
     let text = "one";
     let bool = false;
@@ -94,10 +92,11 @@ Settings."
 
 <div class="text-center items-center justify-center flex flex-col w-full">
   <Title id="project">
-    <img src="/icon.png" class="h-32 p-4" />
     <span class="text-[#F19A3E]">Sv</span><span class="text-[#00A063]">upa</span
     >.js</Title
   >
+
+  <img src="/frameworks.png" class="h-16" />
   <Subtitle>
     A <a href="https://svelte.dev/" class="text-[#F19A3E]">Svelte</a>
     +
@@ -282,8 +281,8 @@ Settings."
     available on GitHub), but there is no npm release yet. While the majority of
     features seem to be running stable, it is strongly advised against using
     Svupa for anything other than playing around as of now and the API is very
-    likely going to change (improve) drastically before the first beta release. If you
-    have questions, ideas or feedback, please get in touch.
+    likely going to change (improve) drastically before the first beta release.
+    If you have questions, ideas or feedback, please get in touch.
   </p>
 
   <Subtitle>
@@ -305,10 +304,10 @@ Settings."
     <div class="flex flex-col items-center justify-center">
       <Title id="appendix">Appendix</Title>
       <Subtitle
-        >Wanna know why I created Svupa or why I chose Svelte and Supabase?
-        Read about it.</Subtitle
+        >Wanna know why I created Svupa or why I chose Svelte and Supabase? Read
+        about it.</Subtitle
       >
-      <a href="/depth"> <Button>I would like to know more.</Button></a>
+      <a href="/depth#idea"> <Button>I would like to know more.</Button></a>
     </div>
     <!--
     Therefore, contributions of any kind will only be possible after the
