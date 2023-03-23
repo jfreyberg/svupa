@@ -123,9 +123,7 @@ Settings."
   </div>
 
   <Title id="features">Features</Title>
-  <Subtitle>
-    All the features you need to build realtime apps.
-  </Subtitle>
+  <Subtitle>All the features you need to build realtime apps.</Subtitle>
 
   <div
     class="text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-16 my-8"
@@ -275,44 +273,6 @@ Settings."
   </div>
 -->
 
-  <Title id="alternatives">Alternatives</Title>
-
-  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
-    There are other great, much more sophisticated and established frameworks
-    that deal with client synchronization. Before you consider using Svupa,
-    check out these frameworks to see if they better fit your usecase.
-  </p>
-  <div
-    class="text-lg grid-cols-1 md:grid-cols-2 grid lg:grid-cols-3 w-full gap-16 my-8"
-  >
-    <a href="https://github.com/yjs/yjs">
-      <FeatureCard title={"Yjs"} type="link">
-        Due to its fast peer-to-peer nature Yjs is ideal for usecases that need
-        fast and frequent synchronization like shared cursors.
-      </FeatureCard>
-    </a>
-    <a href="https://doc.replicache.dev/">
-      <FeatureCard title={"Replicache"} type="link">
-        Replicache offers most of the features Svupa does, and much more. For
-        example, Replicache has offline support.
-      </FeatureCard>
-    </a>
-    <a href="https://sveltequery.vercel.app/">
-      <FeatureCard title={"Svelte Query"} type="link">
-        Backend agnostic, performant and powerful data synchronization for
-        Svelte. Not using Supabase? You should check out Svelte Query instead of
-        Svupa.
-      </FeatureCard>
-    </a>
-
-    <a href="/contact">
-      <FeatureCard title={"What else?"} type="plus">
-        If you know of any other frameworks that are worth mentioning, please
-        get in touch and let me know. I'd love to add them here.
-      </FeatureCard>
-    </a>
-  </div>
-
   <Title id="status">Status</Title>
 
   <Subtitle>Svupa is in open alpha.</Subtitle>
@@ -321,75 +281,37 @@ Settings."
     feedback. The framework is in open alpha (i.e. it works and is openly
     available on GitHub), but there is no npm release yet. While the majority of
     features seem to be running stable, it is strongly advised against using
-    Svupa for anything other than playing around as of now. If you have
-    questions, ideas or feedback, please get in touch.
-  </p>
-
-  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
-    This project is submitted to
-    <a href="https://hack.sveltesociety.dev/" class="underline">SvelteHack</a> -
-    a Hackaton organized by
-    <a href="https://sveltesociety.dev/" class="underline">Svelte Society</a>.
-    <!--
-    Therefore, contributions of any kind will only be possible after the
-    Hackaton is over.-->
+    Svupa for anything other than playing around as of now and the API is very
+    likely going to change (improve) drastically before the first beta release. If you
+    have questions, ideas or feedback, please get in touch.
   </p>
 
   <Subtitle>
+    This project is submitted to
+    <a href="https://hack.sveltesociety.dev/" class="underline">SvelteHack</a> -
+    a Hackaton organized by
+    <a href="https://sveltesociety.dev/" class="underline">Svelte Society</a
+    >.<br />
     <span class="bg-gradient-to-br from-[#F19A3E] to-[#D81E5B] bg-clip-text"
       ><span
         on:click={() => {
           openInNewTab("https://github.com/jfreyberg/Svupa");
         }}
         class="text-transparent cursor-pointer"
-        >If you like this project, please consider dropping a star on Github.</span
+        >If you like Svupa, please consider dropping a star on Github.</span
       >
     </span>
+
+    <div class="flex flex-col items-center justify-center">
+      <Title id="appendix">Appendix</Title>
+      <Subtitle
+        >Wanna know why I created Svupa or why I chose Svelte and Supabase?
+        Read about it.</Subtitle
+      >
+      <a href="/depth"> <Button>I would like to know more.</Button></a>
+    </div>
+    <!--
+    Therefore, contributions of any kind will only be possible after the
+    Hackaton is over.-->
   </Subtitle>
-  <!--
-  <div class="w-1/2 mx-auto flex flex-row">
-    <Button on:click={() => {
-      openInNewTab("https://github.com/jfreyberg/Svupa");
-    }}>Github</Button>
-  </div>
-
-  <Title>Dependencies</Title>
-
-  <div class="w-full grid grid-cols-2 gap-8 text-left mt-8 mb-32">
-    <div
-      class="gap-y-4 flex flex-col border-gray-200 dark:border-[rgba(255,255,255,0.1)] border-2 p-4 rounded-md flex mx-auto"
-    >
-      <h3 class="text-xl">Why Svelte?</h3>
-      <div>
-        <FeatureItem
-          text="Open Source, smaller and faster than React or Vue."
-        />
-        <FeatureItem text="Stores finally make state management a intuitive." />
-        <FeatureItem
-          text="Svelte's reactivity makes it an ideal fit for realtime apps."
-        />
-        <FeatureItem
-          text="Most importantly, Svelte makes developing so much more fun."
-        />
-      </div>
-    </div>
-    <div
-      class="gap-y-4 flex flex-col border-gray-200 dark:border-[rgba(255,255,255,0.1)] border-2 p-4 rounded-md flex mx-auto"
-    >
-      <h3 class="text-xl">Why Supabase?</h3>
-      <div class="">
-        <FeatureItem text="Open Source and offers a generous free tier." />
-        <FeatureItem
-          text="Build in authentication, serverless API and SQL support."
-        />
-        <FeatureItem
-          text="The Realtime API is exactly what's needed for a framework like Svupa."
-        />
-        <FeatureItem
-          text="Most importantly, Supabase makes developing so much more fun."
-        />
-      </div>
-    </div>
-  </div>
--->
 </div>

@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="group/demoBox mt-4 mx-4 lg:mx-0 w-full h-96 relative bg-gradient-to-br from-[#F19A3E] to-[#D81E5B] p-1 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+  class="group/demoBox mt-4 px-4 lg:mx-0 w-full h-96 relative bg-gradient-to-br from-[#F19A3E] to-[#D81E5B] p-1 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
 >
   <img
     alt="arrow"
@@ -23,7 +23,7 @@
     style="font-family:Indie Flower;"
   >
     * Iframes are used to "display websites inside of a website". You are seeing
-    two right now. Don't believe it? You can open them in seperate tabs.
+    two right now. Don't believe it? You can open them in seperate tabs or windows.
   </div>
 
   <!--
