@@ -1,9 +1,43 @@
 <script>
+  function openInNewTab(url) {
+    window.open(url, "_blank").focus();
+  }
+  let header_open = true;
 </script>
 
 <div
   class="w-screen h-screen bg-white text-[#202C59] dark:text-white dark:bg-[#202C59] overflow-x dark overflow-y-scroll"
 >
+  {#if header_open}
+    <div
+      class="border-b border-[#202C59] leading-6 w-full shadow-xl flex flex-row text-sm p-1 items-center justify-center bg-gradient-to-r from-[#F19A3E] via-[#D81E5B] to-[#F19A3E] text-white"
+    >
+      <p>
+        This project is submitted to
+        <span
+          on:click={() => {
+            openInNewTab("https://hack.sveltesociety.dev/");
+          }}
+          class="underline cursor-pointer">SvelteHack</span
+        >.
+      </p>
+      <p class="pl-1">
+        If you like it, please consider dropping a star on <span
+          on:click={() => {
+            openInNewTab("https://github.com/jfreyberg/Svupa");
+          }}
+          class="underline cursor-pointer">Github</span
+        >.
+      </p>
+      <img
+        src="/x.png"
+        class="w-4 h-4 ml-2 cursor-pointer"
+        on:click={() => {
+          header_open = false;
+        }}
+      />
+    </div>
+  {/if}
   <div class="w-full md:w-2/3 mx-auto md:px-0 px-4">
     <slot />
   </div>

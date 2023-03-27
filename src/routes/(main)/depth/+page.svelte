@@ -93,7 +93,7 @@
   <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     If you are familiar with Svelte (especially stores and reactivity) you can
     think of Svupa like this: Using a Svelte store means you can see changes
-    applyed to the store data immediately on the UI. With Svupa, the same thing
+    applied to the store data immediately on the UI. With Svupa, the same thing
     happens but not just for one user, but all users who subscribe to a the data
     of a store.
   </p>

@@ -1,6 +1,5 @@
 <script lang="ts">
   import FeatureCard from "/src/components/FeatureCard.svelte";
-  import FeatureItem from "/src/components/FeatureItem.svelte";
   import Title from "/src/components/Title.svelte";
   import Markup from "/src/components/Markup.svelte";
   import Subtitle from "/src/components/Subtitle.svelte";
@@ -52,9 +51,6 @@
     demoUrlPesimisitic = demoUrl + "pessimistic";
   });
 
-  function openInNewTab(url) {
-    window.open(url, "_blank").focus();
-  }
 </script>
 
 <div class="w-full mx-auto flex flex-col gap-y-4">
@@ -301,32 +297,15 @@ Settings."
     If you have questions, ideas or feedback, please get in touch.
   </p>
 
-  <Subtitle>
-    This project is submitted to
-    <a href="https://hack.sveltesociety.dev/" class="underline">SvelteHack</a> -
-    a Hackaton organized by
-    <a href="https://sveltesociety.dev/" class="underline">Svelte Society</a
-    >.<br />
-    <span class="bg-gradient-to-br from-[#F19A3E] to-[#D81E5B] bg-clip-text"
-      ><span
-        on:click={() => {
-          openInNewTab("https://github.com/jfreyberg/Svupa");
-        }}
-        class="text-transparent cursor-pointer"
-        >If you like Svupa, please consider dropping a star on Github.</span
-      >
-    </span>
-
-    <div class="flex flex-col items-center justify-center">
-      <Title id="appendix">Appendix</Title>
-      <Subtitle
-        >Wanna know why I created Svupa or why I chose Svelte and Supabase? Read
-        about it.</Subtitle
-      >
-      <a href="/depth#idea"> <Button>I would like to know more.</Button></a>
-    </div>
-    <!--
+  <div class="flex flex-col items-center justify-center">
+    <Title id="appendix">Appendix</Title>
+    <Subtitle
+      >Wanna know why I created Svupa or why I chose Svelte and Supabase? Read
+      about it.</Subtitle
+    >
+    <a href="/depth#idea"> <Button>I would like to know more.</Button></a>
+  </div>
+  <!--
     Therefore, contributions of any kind will only be possible after the
     Hackaton is over.-->
-  </Subtitle>
 </div>
