@@ -193,6 +193,22 @@ Settings."
     their changes in realtime too.
   </p>
 
+  <h3 class="text-xl mt-8">Imagine a more complex scenario.</h3>
+
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
+    This is just a minimalistic demo. You are viewing and manipulating <span
+      class="italic">one single value</span
+    >
+    in <span class="italic">one isolated row</span> in
+    <span class="italic">one lonely table</span>. But Svupa will work just as
+    fine with <span class="italic">dozens of tables</span>,
+    <span class="italic">hundreds of rows</span>
+    and <span class="italic">thousands of values</span>. If synchronization of
+    one single integer already looks that cool, imagine what synchronization of
+    a whole application can look like. Sounds like a you need to write a lot of
+    code, doesn't it? Fortunately, it is svupa simple.
+  </p>
+
   <Title id="usage">Usage</Title>
 
   <Subtitle>As convenient as it gets.</Subtitle>
@@ -200,7 +216,7 @@ Settings."
   <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-justify">
     Using the Supabase API is low effort already. Svupa takes it to the next
     level. You can integrate it into your existing Svelte project with just a
-    few LOC.
+    few lines of code.
   </p>
 
   <div class="relative max-w-full">
@@ -215,7 +231,7 @@ Settings."
       Click here to copy this code.
     </div>
     <div class="relative z-20">
-      <CodeSnippet code={code.usage} filename={"Component.svelte"} />
+      <CodeSnippet code={code.usage} filename={"ListOfRows.svelte"} />
     </div>
   </div>
 

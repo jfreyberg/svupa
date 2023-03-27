@@ -11,7 +11,7 @@
       <div class="w-3 h-3 rounded-full bg-[#D81E5B] flex-none" />
       <div class="w-3 h-3 rounded-full bg-[#F19A3E] flex-none" />
       <div class="w-3 h-3 rounded-full bg-[#00A063] flex-none" />
-      <div class="text-xs overflow-hidden truncate bg-white border-gray-200 border rounded-md p-1 w-full text-left">{url}</div>
+      <div class="text-xs overflow-hidden truncate bg-white border-gray-200 dark:text-[#202C59] border rounded-md p-1 w-full text-left">{url}</div>
     </div>
     <iframe class="w-full h-full" src={url} title="Demo" />
     <div

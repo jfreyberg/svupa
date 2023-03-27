@@ -44,7 +44,6 @@ class DB {
         if (status != 201) {
           return false;
         } else {
-          //console.log("ok");
           return true;
         }
       });
@@ -59,7 +58,6 @@ class DB {
         if (status != 201) {
           return false;
         } else {
-          //console.log("ok");
           return true;
         }
       });
@@ -82,7 +80,6 @@ class DB {
       if (status != 204) {
         return false;
       } else {
-        //console.log("ok");
         return true;
       }
     });
@@ -373,7 +370,6 @@ class svupaStore {
 
     if (this.pessimisticBackup.get(key) && timestamp) {
       // if the row is still in pessimistic backup and the change is invoked by a regular subscription, ignore the change
-      //console.log("catched");
       return;
     }
     this._internalStore.upsert(key, row);

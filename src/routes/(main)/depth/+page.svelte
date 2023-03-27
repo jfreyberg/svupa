@@ -146,6 +146,13 @@
   <div
     class="text-lg grid-cols-1 md:grid-cols-2 grid lg:grid-cols-3 w-full gap-16 my-8"
   >
+    <a href="https://www.convex.dev/">
+      <FeatureCard title={"Convex"} type="link">
+        Convex is a database that is built for realtime applications with a simple SDK.
+        Convex seems to be a solid alternative to Supabase if realtime is
+        an important relevant feature for your application.
+      </FeatureCard>
+    </a>
     <a href="https://github.com/yjs/yjs">
       <FeatureCard title={"Yjs"} type="link">
         Due to its fast peer-to-peer nature Yjs is ideal for usecases that need
