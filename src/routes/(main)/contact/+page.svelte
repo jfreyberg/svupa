@@ -4,6 +4,10 @@
 </script>
 
 <div class="text-center items-center justify-center flex flex-col w-full">
+  <p class="my-2 w-full px-4 lg:px-0 lg:w-2/3 text-center">
+    This website does not use cookies and it does not collect any personal data.
+  </p>
+
   <Title id="contact">Contact</Title>
   <Subtitle>
     Julian Freyberg<br />
@@ -28,9 +32,7 @@
         /></svg
       ></a
     >
-    <a
-      href="https://www.linkedin.com/in/julian-freyberg-02a651235/"
-      class=""
+    <a href="https://www.linkedin.com/in/julian-freyberg-02a651235/" class=""
       ><svg
         class="w-16 h-16 my-2 ml-2 "
         xmlns="http://www.w3.org/2000/svg"

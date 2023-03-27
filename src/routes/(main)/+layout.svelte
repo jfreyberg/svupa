@@ -10,7 +10,7 @@
 >
   {#if header_open}
     <div
-      class="flex flex-row border-b border-[#202C59] leading-6 w-full shadow-xl text-center text-sm p-1 items-center justify-center bg-gradient-to-r from-[#F19A3E] via-[#D81E5B] to-[#F19A3E] text-white"
+      class="flex flex-row leading-6 w-full shadow-xl text-center text-sm p-1 items-center justify-center bg-gradient-to-r from-[#F19A3E] via-[#D81E5B] to-[#F19A3E] text-white"
     >
       <p>
         This project is submitted to
