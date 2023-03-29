@@ -19,7 +19,7 @@ And a conceptual overview here:
 <br><br>
 <img src="https://svupa.vercel.app/concept.png" height="380"><br>
 
-I also provide much more information on the <a href="https://svupa.vercel.app/">project webiste</a> , including a live demo.
+I also provide much more information on the <a href="https://svupa.vercel.app/">project webiste</a>, including a live demo.
 
 <b>Why Supabase?</b><br>
 
