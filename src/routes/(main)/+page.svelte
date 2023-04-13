@@ -46,7 +46,7 @@
       },
       false
     );
-    demoUrl = window.location.href.split("#")[0] + "demo/" + row_id + "/";
+    demoUrl = window.location.href.split("#")[0].split("/")[0] + "/demo/" + row_id + "/";
     demoUrlOptimistic = demoUrl + "optimistic";
     demoUrlPesimisitic = demoUrl + "pessimistic";
   });
