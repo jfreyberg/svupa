@@ -29,7 +29,7 @@
       </p>
       <img
         src="/x.png"
-        class="w-4 h-4 ml-2 cursor-pointer"
+        class="w-4 h-4 mx-2 cursor-pointer"
         on:click={() => {
           header_open = false;
         }}
