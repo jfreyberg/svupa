@@ -1,6 +1,6 @@
 <a href="https://svupa.vercel.app/">
 <p  align="center">
-<img src="./header.png" height="160">
+<img src="./header.png">
 </p>
 </a>
 
