@@ -14,10 +14,10 @@ Supabase is an open-source database built on top of PostgreSQL. Svupa synchroniz
 
 If you're still confused, don't worry! You can see an example right here:
 
-<img src="https://svupa.vercel.app/demo_hero.gif" height="380"><br><br>
+<img src="https://svupa.vercel.app/demo_hero.gif"><br><br>
 And a conceptual overview here:
 <br><br>
-<img src="https://svupa.vercel.app/concept.png" height="380"><br>
+<img src="https://svupa.vercel.app/concept.png"><br>
 
 I also provide much more information on the <a href="https://svupa.vercel.app/">project webiste</a>, including a live demo.
 
