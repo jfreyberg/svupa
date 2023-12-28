@@ -15,9 +15,10 @@
     "preview": "svelte-kit preview"
   },
   "dependencies": {
+    "@sveltejs/package": "^2.2.4"
   },
   "devDependencies": {
-    "@supabase/supabase-js": "2.10.0",
+    "@supabase/supabase-js": "2.39.1",
     "@sveltejs/adapter-vercel": "next",
     "@sveltejs/kit": ">=1.15.2",
     "svelte": "3.58.0",
@@ -25,6 +26,13 @@
     "svelte-preprocess": "^4.10.4",
     "tailwindcss": "^3.2.7",
     "uuid": "9.0.0",
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "typescript": "^4.3.3"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    }
   }
 }

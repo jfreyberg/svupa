@@ -5,7 +5,7 @@
 /// <reference types="@sveltejs/kit" />
 
 /**
- * Environment variables [loaded by Vite](https://vitejs.dev/guide/env-and-mode.html#env-files) from `.env` files and `process.env`. Like [`$env/dynamic/private`](https://kit.svelte.dev/docs/modules#$env-dynamic-private), this module cannot be imported into client-side code. This module only includes variables that _do not_ begin with [`config.kit.env.publicPrefix`](https://kit.svelte.dev/docs/configuration#env).
+ * Environment variables [loaded by Vite](https://vitejs.dev/guide/env-and-mode.html#env-files) from `.env` files and `process.env`. Like [`$env/dynamic/private`](https://kit.svelte.dev/docs/modules#$env-dynamic-private), this module cannot be imported into client-side code. This module only includes variables that _do not_ begin with [`config.kit.env.publicPrefix`](https://kit.svelte.dev/docs/configuration#env) _and do_ start with [`config.kit.env.privatePrefix`](https://kit.svelte.dev/docs/configuration#env) (if configured).
  * 
  * _Unlike_ [`$env/dynamic/private`](https://kit.svelte.dev/docs/modules#$env-dynamic-private), the values exported from this module are statically injected into your bundle at build time, enabling optimisations like dead code elimination.
  * 
@@ -26,106 +26,67 @@
  * ```
  */
 declare module '$env/static/private' {
-	export const LESSOPEN: string;
-	export const npm_package_dev: string;
+	export const MANPATH: string;
+	export const TERM_PROGRAM: string;
+	export const NODE: string;
+	export const INIT_CWD: string;
+	export const TERM: string;
+	export const SHELL: string;
+	export const npm_config_metrics_registry: string;
+	export const HOMEBREW_REPOSITORY: string;
+	export const TMPDIR: string;
+	export const npm_config_global_prefix: string;
+	export const TERM_PROGRAM_VERSION: string;
+	export const npm_package_optional: string;
+	export const COLOR: string;
+	export const npm_config_noproxy: string;
+	export const npm_config_local_prefix: string;
 	export const USER: string;
-	export const LC_TIME: string;
-	export const npm_config_user_agent: string;
-	export const SSH_AGENT_PID: string;
-	export const XDG_SESSION_TYPE: string;
-	export const GIT_ASKPASS: string;
-	export const npm_node_execpath: string;
+	export const COMMAND_MODE: string;
+	export const npm_config_globalconfig: string;
+	export const npm_package_peer: string;
+	export const SSH_AUTH_SOCK: string;
+	export const __CF_USER_TEXT_ENCODING: string;
+	export const WARP_IS_LOCAL_SHELL_SESSION: string;
+	export const npm_execpath: string;
+	export const WARP_USE_SSH_WRAPPER: string;
+	export const npm_package_integrity: string;
+	export const PATH: string;
+	export const npm_package_json: string;
+	export const _: string;
+	export const LaunchInstanceID: string;
+	export const npm_config_userconfig: string;
+	export const npm_config_init_module: string;
+	export const __CFBundleIdentifier: string;
+	export const npm_command: string;
+	export const PWD: string;
+	export const npm_lifecycle_event: string;
+	export const EDITOR: string;
+	export const npm_package_name: string;
+	export const XPC_FLAGS: string;
+	export const npm_package_engines_node: string;
+	export const npm_config_node_gyp: string;
+	export const npm_package_dev: string;
+	export const npm_package_version: string;
+	export const XPC_SERVICE_NAME: string;
 	export const npm_package_resolved: string;
 	export const SHLVL: string;
-	export const npm_config_noproxy: string;
-	export const QT4_IM_MODULE: string;
 	export const HOME: string;
-	export const CHROME_DESKTOP: string;
-	export const npm_package_optional: string;
-	export const TERM_PROGRAM_VERSION: string;
-	export const DESKTOP_SESSION: string;
-	export const npm_package_json: string;
-	export const GIO_LAUNCHED_DESKTOP_FILE: string;
-	export const npm_package_engines_node: string;
-	export const GTK_MODULES: string;
-	export const VSCODE_GIT_ASKPASS_MAIN: string;
-	export const LC_MONETARY: string;
-	export const VSCODE_GIT_ASKPASS_NODE: string;
-	export const npm_config_userconfig: string;
-	export const npm_config_local_prefix: string;
-	export const npm_package_integrity: string;
-	export const DBUS_SESSION_BUS_ADDRESS: string;
-	export const COLORTERM: string;
-	export const GIO_LAUNCHED_DESKTOP_FILE_PID: string;
-	export const COLOR: string;
-	export const NVM_DIR: string;
-	export const UBUNTU_MENUPROXY: string;
-	export const npm_config_metrics_registry: string;
-	export const MANDATORY_PATH: string;
-	export const QT_QPA_PLATFORMTHEME: string;
-	export const GTK_IM_MODULE: string;
-	export const LOGNAME: string;
-	export const _: string;
-	export const XDG_SESSION_CLASS: string;
-	export const DEFAULTS_PATH: string;
-	export const USERNAME: string;
-	export const TERM: string;
-	export const npm_config_cache: string;
-	export const GNOME_DESKTOP_SESSION_ID: string;
-	export const WINDOWPATH: string;
-	export const npm_config_node_gyp: string;
-	export const PATH: string;
-	export const SESSION_MANAGER: string;
-	export const NODE: string;
-	export const npm_package_name: string;
-	export const XDG_MENU_PREFIX: string;
-	export const LC_ADDRESS: string;
-	export const XDG_RUNTIME_DIR: string;
-	export const GDK_BACKEND: string;
-	export const DISPLAY: string;
-	export const LANG: string;
-	export const XDG_CURRENT_DESKTOP: string;
-	export const LC_TELEPHONE: string;
-	export const XMODIFIERS: string;
-	export const XDG_SESSION_DESKTOP: string;
-	export const XAUTHORITY: string;
-	export const LS_COLORS: string;
-	export const VSCODE_GIT_IPC_HANDLE: string;
-	export const TERM_PROGRAM: string;
-	export const npm_lifecycle_script: string;
-	export const SSH_AUTH_SOCK: string;
-	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
-	export const SHELL: string;
-	export const LC_NAME: string;
-	export const npm_package_version: string;
-	export const npm_lifecycle_event: string;
-	export const QT_ACCESSIBILITY: string;
-	export const NO_AT_BRIDGE: string;
-	export const GDMSESSION: string;
-	export const LESSCLOSE: string;
-	export const LC_MEASUREMENT: string;
+	export const HOMEBREW_PREFIX: string;
 	export const npm_package_dev_optional: string;
-	export const GPG_AGENT_INFO: string;
-	export const LC_IDENTIFICATION: string;
-	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
-	export const QT_IM_MODULE: string;
-	export const npm_config_globalconfig: string;
-	export const npm_config_init_module: string;
-	export const npm_package_peer: string;
-	export const PWD: string;
-	export const npm_execpath: string;
-	export const XDG_CONFIG_DIRS: string;
-	export const CLUTTER_IM_MODULE: string;
-	export const NVM_CD_FLAGS: string;
-	export const XDG_DATA_DIRS: string;
-	export const npm_config_global_prefix: string;
-	export const LC_NUMERIC: string;
-	export const npm_command: string;
-	export const LC_PAPER: string;
-	export const NVM_RC_VERSION: string;
-	export const NPM_CONFIG_PREFIX: string;
-	export const INIT_CWD: string;
-	export const EDITOR: string;
+	export const npm_config_cache: string;
+	export const LOGNAME: string;
+	export const npm_lifecycle_script: string;
+	export const LC_CTYPE: string;
+	export const SSH_SOCKET_DIR: string;
+	export const npm_config_user_agent: string;
+	export const INFOPATH: string;
+	export const HOMEBREW_CELLAR: string;
+	export const CONDA_CHANGEPS1: string;
+	export const SECURITYSESSIONID: string;
+	export const npm_node_execpath: string;
+	export const npm_config_prefix: string;
+	export const COLORTERM: string;
 }
 
 /**
@@ -138,11 +99,11 @@ declare module '$env/static/private' {
  * ```
  */
 declare module '$env/static/public' {
-
+	
 }
 
 /**
- * This module provides access to runtime environment variables, as defined by the platform you're running on. For example if you're using [`adapter-node`](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) (or running [`vite preview`](https://kit.svelte.dev/docs/cli)), this is equivalent to `process.env`. This module only includes variables that _do not_ begin with [`config.kit.env.publicPrefix`](https://kit.svelte.dev/docs/configuration#env).
+ * This module provides access to runtime environment variables, as defined by the platform you're running on. For example if you're using [`adapter-node`](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) (or running [`vite preview`](https://kit.svelte.dev/docs/cli)), this is equivalent to `process.env`. This module only includes variables that _do not_ begin with [`config.kit.env.publicPrefix`](https://kit.svelte.dev/docs/configuration#env) _and do_ start with [`config.kit.env.privatePrefix`](https://kit.svelte.dev/docs/configuration#env) (if configured).
  * 
  * This module cannot be imported into client-side code.
  * 
@@ -155,108 +116,69 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		LESSOPEN: string;
-		npm_package_dev: string;
+		MANPATH: string;
+		TERM_PROGRAM: string;
+		NODE: string;
+		INIT_CWD: string;
+		TERM: string;
+		SHELL: string;
+		npm_config_metrics_registry: string;
+		HOMEBREW_REPOSITORY: string;
+		TMPDIR: string;
+		npm_config_global_prefix: string;
+		TERM_PROGRAM_VERSION: string;
+		npm_package_optional: string;
+		COLOR: string;
+		npm_config_noproxy: string;
+		npm_config_local_prefix: string;
 		USER: string;
-		LC_TIME: string;
-		npm_config_user_agent: string;
-		SSH_AGENT_PID: string;
-		XDG_SESSION_TYPE: string;
-		GIT_ASKPASS: string;
-		npm_node_execpath: string;
+		COMMAND_MODE: string;
+		npm_config_globalconfig: string;
+		npm_package_peer: string;
+		SSH_AUTH_SOCK: string;
+		__CF_USER_TEXT_ENCODING: string;
+		WARP_IS_LOCAL_SHELL_SESSION: string;
+		npm_execpath: string;
+		WARP_USE_SSH_WRAPPER: string;
+		npm_package_integrity: string;
+		PATH: string;
+		npm_package_json: string;
+		_: string;
+		LaunchInstanceID: string;
+		npm_config_userconfig: string;
+		npm_config_init_module: string;
+		__CFBundleIdentifier: string;
+		npm_command: string;
+		PWD: string;
+		npm_lifecycle_event: string;
+		EDITOR: string;
+		npm_package_name: string;
+		XPC_FLAGS: string;
+		npm_package_engines_node: string;
+		npm_config_node_gyp: string;
+		npm_package_dev: string;
+		npm_package_version: string;
+		XPC_SERVICE_NAME: string;
 		npm_package_resolved: string;
 		SHLVL: string;
-		npm_config_noproxy: string;
-		QT4_IM_MODULE: string;
 		HOME: string;
-		CHROME_DESKTOP: string;
-		npm_package_optional: string;
-		TERM_PROGRAM_VERSION: string;
-		DESKTOP_SESSION: string;
-		npm_package_json: string;
-		GIO_LAUNCHED_DESKTOP_FILE: string;
-		npm_package_engines_node: string;
-		GTK_MODULES: string;
-		VSCODE_GIT_ASKPASS_MAIN: string;
-		LC_MONETARY: string;
-		VSCODE_GIT_ASKPASS_NODE: string;
-		npm_config_userconfig: string;
-		npm_config_local_prefix: string;
-		npm_package_integrity: string;
-		DBUS_SESSION_BUS_ADDRESS: string;
-		COLORTERM: string;
-		GIO_LAUNCHED_DESKTOP_FILE_PID: string;
-		COLOR: string;
-		NVM_DIR: string;
-		UBUNTU_MENUPROXY: string;
-		npm_config_metrics_registry: string;
-		MANDATORY_PATH: string;
-		QT_QPA_PLATFORMTHEME: string;
-		GTK_IM_MODULE: string;
-		LOGNAME: string;
-		_: string;
-		XDG_SESSION_CLASS: string;
-		DEFAULTS_PATH: string;
-		USERNAME: string;
-		TERM: string;
-		npm_config_cache: string;
-		GNOME_DESKTOP_SESSION_ID: string;
-		WINDOWPATH: string;
-		npm_config_node_gyp: string;
-		PATH: string;
-		SESSION_MANAGER: string;
-		NODE: string;
-		npm_package_name: string;
-		XDG_MENU_PREFIX: string;
-		LC_ADDRESS: string;
-		XDG_RUNTIME_DIR: string;
-		GDK_BACKEND: string;
-		DISPLAY: string;
-		LANG: string;
-		XDG_CURRENT_DESKTOP: string;
-		LC_TELEPHONE: string;
-		XMODIFIERS: string;
-		XDG_SESSION_DESKTOP: string;
-		XAUTHORITY: string;
-		LS_COLORS: string;
-		VSCODE_GIT_IPC_HANDLE: string;
-		TERM_PROGRAM: string;
-		npm_lifecycle_script: string;
-		SSH_AUTH_SOCK: string;
-		ORIGINAL_XDG_CURRENT_DESKTOP: string;
-		SHELL: string;
-		LC_NAME: string;
-		npm_package_version: string;
-		npm_lifecycle_event: string;
-		QT_ACCESSIBILITY: string;
-		NO_AT_BRIDGE: string;
-		GDMSESSION: string;
-		LESSCLOSE: string;
-		LC_MEASUREMENT: string;
+		HOMEBREW_PREFIX: string;
 		npm_package_dev_optional: string;
-		GPG_AGENT_INFO: string;
-		LC_IDENTIFICATION: string;
-		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
-		QT_IM_MODULE: string;
-		npm_config_globalconfig: string;
-		npm_config_init_module: string;
-		npm_package_peer: string;
-		PWD: string;
-		npm_execpath: string;
-		XDG_CONFIG_DIRS: string;
-		CLUTTER_IM_MODULE: string;
-		NVM_CD_FLAGS: string;
-		XDG_DATA_DIRS: string;
-		npm_config_global_prefix: string;
-		LC_NUMERIC: string;
-		npm_command: string;
-		LC_PAPER: string;
-		NVM_RC_VERSION: string;
-		NPM_CONFIG_PREFIX: string;
-		INIT_CWD: string;
-		EDITOR: string;
+		npm_config_cache: string;
+		LOGNAME: string;
+		npm_lifecycle_script: string;
+		LC_CTYPE: string;
+		SSH_SOCKET_DIR: string;
+		npm_config_user_agent: string;
+		INFOPATH: string;
+		HOMEBREW_CELLAR: string;
+		CONDA_CHANGEPS1: string;
+		SECURITYSESSIONID: string;
+		npm_node_execpath: string;
+		npm_config_prefix: string;
+		COLORTERM: string;
 		[key: `PUBLIC_${string}`]: undefined;
-		[key: string]: string | undefined;
+		[key: `${string}`]: string | undefined;
 	}
 }
 

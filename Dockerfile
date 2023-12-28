@@ -1,4 +1,4 @@
-FROM node:19-alpine3.16
+FROM node:21-alpine3.18
 
 
 WORKDIR /app
@@ -9,7 +9,7 @@ COPY ./tailwind.config.cjs ./
 COPY ./vite.config.js ./
 COPY ./package*.json ./
 
-RUN npm install -g npm@9.6.1
+RUN npm install -g npm@10.2.5
 RUN npm install
 RUN npm update
 

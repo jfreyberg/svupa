@@ -1,6 +1,6 @@
 <script>
   import { createClient } from "@supabase/supabase-js";
-  import { svupa } from "/src/utils/svupa";
+  import { Svupa } from "/src/utils/svupa";
   import { v4 as uuidv4 } from "uuid";
   import Button from "./Button.svelte";
 
@@ -100,7 +100,6 @@
     }
     a.upsert(row, optimistic);
   }
-
 </script>
 
 {#if $header}
@@ -142,6 +141,8 @@
           class="p-1 border-b border-gray-200 dark:border-[rgba(255,255,255,0.1)] leading-6 text-sm font-normal text-gray-900 truncate flex flex-row gap-x-2"
           style="width:{100 / Object.entries(row).length}%"
         >
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-missing-attribute -->
           <img
             src="/trash.png"
             class="w-6 h-6 cursor-pointer"
@@ -149,6 +150,8 @@
               deleteRow(row.id);
             }}
           />
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-missing-attribute -->
           <img
             src="/plus.png"
             class="w-6 h-6 cursor-pointer"

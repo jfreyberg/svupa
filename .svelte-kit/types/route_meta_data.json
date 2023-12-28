@@ -1,5 +1,19 @@
 {
-	"/": [
-		"src/routes/+page.js"
+	"/(main)": [
+		"src/routes/(main)/+page.js"
+	],
+	"/": [],
+	"/(main)/contact": [
+		"src/routes/(main)/contact/+page.js"
+	],
+	"/(iframe)/demo": [],
+	"/(iframe)/demo/[row_id]": [
+		"src/routes/(iframe)/demo/[row_id]/+page.js"
+	],
+	"/(iframe)/demo/[row_id]/[mode]": [
+		"src/routes/(iframe)/demo/[row_id]/[mode]/+page.js"
+	],
+	"/(main)/depth": [
+		"src/routes/(main)/depth/+page.js"
 	]
 }

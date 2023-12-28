@@ -1,17 +1,17 @@
 <script lang="ts">
-  import FeatureCard from "/src/components/FeatureCard.svelte";
-  import Title from "/src/components/Title.svelte";
-  import Markup from "/src/components/Markup.svelte";
-  import Subtitle from "/src/components/Subtitle.svelte";
-  import Button from "/src/components/Button.svelte";
-  import CodeSnippet from "/src/components/CodeSnippet.svelte";
-  import DemoBox from "/src/components/DemoBox.svelte";
+  import FeatureCard from "../../../src/components/FeatureCard.svelte";
+  import Title from "../../../src/components/Title.svelte";
+  import Markup from "../../../src/components/Markup.svelte";
+  import Subtitle from "../../../src/components/Subtitle.svelte";
+  import Button from "../../../src/components/Button.svelte";
+  import CodeSnippet from "../../../src/components/CodeSnippet.svelte";
+  import DemoBox from "../../../src/components/DemoBox.svelte";
   import { createClient } from "@supabase/supabase-js";
   import { onMount } from "svelte";
-  import code from "/src/data/code.json";
+  import code from "../../../src/data/code.json";
   import { v4 as uuidv4 } from "uuid";
-  import { svupa } from "/src/utils/svupa";
-  import CopyInput from "/src/components/CopyInput.svelte";
+  import { Svupa } from "../../../src/utils/svupa";
+  import CopyInput from "../../../src/components/CopyInput.svelte";
 
   let url = "https://hfvvrfrkhbkyqfkkxdsb.supabase.co";
   let key =
@@ -20,39 +20,28 @@
 
   const supabase = createClient(url, key);
 
-  // Define the function to call the PostgreSQL function
-  async function createNewTable() {
-    const supabase = createClient(url, key);
-    return await supabase.rpc("create_new_table").then(({ data, error }) => {
-      return data;
-    });
-  }
   let row_id = false;
-  let demoUrl = false;
-  let demoUrlOptimistic = false;
-  let demoUrlPesimisitic = false;
+  let demoUrl = "";
+  let demoUrlOptimistic = "";
+  let demoUrlPesimisitic = "";
   onMount(async () => {
-    let svupa_client = svupa(supabase, "demo", keys);
+    let table = new Svupa(supabase).table("demo", "public", "id");
+
     let int = 1;
     let text = "one";
     let bool = false;
     row_id = uuidv4();
-    await svupa_client.insert(
-      {
-        id: row_id,
-        number: int,
-        plain: text,
-        is_even: bool,
-      },
-      false
-    );
+    await table.insert({
+      id: row_id,
+      number: int,
+      plain: text,
+      is_even: bool,
+    });
     demoUrl = window.location.href.split("/")[0] + "/demo/" + row_id + "/";
     demoUrlOptimistic = demoUrl + "optimistic";
     demoUrlPesimisitic = demoUrl + "pessimistic";
   });
-
 </script>
-
 <div class="w-full mx-auto flex flex-col gap-y-4">
   <!--
     <Input
@@ -144,7 +133,7 @@ Settings."
       Supabase Realtime uses websockets and server side notifications to push
       changes. No changes on your data, no traffic between client and server.
     </FeatureCard>
-    <FeatureCard title={"Conflic Resolution"}>
+    <FeatureCard title={"Conflict Resolution"}>
       Svupa uses a variation of <a
         href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type"
         class="underline">Operation-based Conflict Resolution</a

@@ -1,6 +1,6 @@
 {
-    "usage": "<script>\nimport svupa from 'svupa';\nconst svupa_client = svupa(supabase_client, 'table_name', 'primary_key');\nconst { store: rows } = svupa_client.request({'type': 'eq' ,'column': 'my_column', 'value': 'my_value'});\n</script>\n\n{#each $rows as row (row.primary_key)}\n    <RowComponent {row} on:click={() => {svupa_client.delete(row)}}>\n{/each}",
-    "derived": "<script>\nconst sum_of_values = derived(rows, ($rows, set) => {\n    set($rows.map((row) => row.number_field).reduce((a, b) => a + b, 0));\n});\n</script>\n\n<p>The total value of number_field is {$sum_of_values}.</p>\n",
+    "usage": "<script>\nconst sv = Svupa(supabaseClient);\nconst table = sv.table('table', 'public' 'primaryKey').filter(new EQ(\"key\", value));\ntable.init()\n</script>\n\n{#each $table as row (row.primary_key)}\n    <RowComponent {row} on:click={() => {table.delete(row)}}>\n{/each}",
+    "derived": "<script>\nconst sum = derived(table, ($rows, set) => {\n    set($rows.map((row) => row.number_field).reduce((a, b) => a + b, 0));\n});\n</script>\n\n<p>The total value of number_field is {$sum}.</p>\n",
     "sql": "INSERT INTO table_name (primary_key, my_column, another_column) VALUES ('key-123', 'my_value', 'new data');",
     "installNpm": "npm install svupa --save",
     "installYarn": "yarn install svupa ?"

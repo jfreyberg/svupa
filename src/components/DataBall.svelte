@@ -1,7 +1,9 @@
 <script>
   import { derived } from "svelte/store";
+  import { EQ } from "../../src/utils/condition";
   import { createClient } from "@supabase/supabase-js";
-  import { svupa } from "/src/utils/svupa";
+  import { Svupa } from "/src/utils/svupa";
+  import { onMount } from "svelte/internal";
 
   export let row_id;
   export let optimistic;
@@ -11,20 +13,14 @@
   let key =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhmdnZyZnJraGJreXFma2t4ZHNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzgzNzA2ODUsImV4cCI6MTk5Mzk0NjY4NX0.BEikWxuiQSPO6qtzrQlTzErWrJDJEDZcqR9CpHD7Zxg";
 
-  let keys = "id";
   const supabase = createClient(url, key);
-  const a = svupa(supabase, "demo", keys);
-  let { name: x, store: rows } = a.request({
-    type: "eq",
-    column: "id",
-    value: row_id,
-  });
+  let table = new Svupa(supabase)
+    .table("demo", "public", "id", optimistic)
+    .filter(new EQ("id", row_id));
 
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  onMount(async () => {
+    await table.init();
+  });
 
   function isEven(n) {
     return n % 2 == 0;
@@ -44,7 +40,7 @@
   };
 
   async function upsertRow(invalid = false) {
-    let row = structuredClone($rows.filter((row) => row.id == row_id)[0]);
+    let row = structuredClone($table.filter((row) => row.id == row_id)[0]);
     row.number = (row.number += 1) % 10;
     row.plain = intToStr[row.number];
     row.is_even = isEven(row.number);
@@ -53,13 +49,13 @@
       row.number = "INVALID STATE";
     }
 
-    await a.upsert(row, optimistic).then((res) => {
+    await table.update(row, optimistic).then((res) => {
       //console.log(res);
     });
   }
 
-  let element = derived(
-    rows,
+  const element = derived(
+    table,
     ($rows, set) => {
       if ($rows.length > 0) {
         set($rows.sort()[0]);
@@ -73,6 +69,7 @@
 
 <div class="w-full h-full flex items-center justify-center">
   {#if $element}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
       style={"border-width:" + ($element.number + 3) * 2 + "px !important;"}
       class="scale-{scale} {$element.is_even

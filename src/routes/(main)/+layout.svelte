@@ -13,19 +13,12 @@
       class="flex flex-row leading-6 w-full shadow-xl text-center text-sm p-1 items-center justify-center bg-gradient-to-r from-[#F19A3E] via-[#D81E5B] to-[#F19A3E] text-white"
     >
       <p>
-        This project is submitted to
-        <span
-          on:click={() => {
-            openInNewTab("https://hack.sveltesociety.dev/");
-          }}
-          class="underline cursor-pointer">SvelteHack</span
-        >.
-        If you like it, please consider dropping a star on <span
+        Hey there 👋 If you like Svupa.js consider dropping a star on <span
           on:click={() => {
             openInNewTab("https://github.com/jfreyberg/Svupa");
           }}
           class="underline cursor-pointer">Github</span
-        >.
+        >!
       </p>
       <img
         src="/x.png"
